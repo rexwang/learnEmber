@@ -5,7 +5,10 @@ export default Ember.Component.extend({
   filteredList: null,
   actions: {
     autoComplete() {
-      this.get('autoComplete')(this.get('filter'));
+      var ctrlAutoComplete = this.get('autoComplete'),
+          filterValue = this.get('filter');
+
+      ctrlAutoComplete(filterValue);
     },
     search() {
       this.get('search')(this.get('filter'));
